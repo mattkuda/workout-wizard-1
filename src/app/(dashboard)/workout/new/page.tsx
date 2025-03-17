@@ -27,7 +27,7 @@ export default function NewWorkoutPage() {
     exercises: [] as Exercise[],
   })
 
-  const handleExerciseChange = (index: number, field: keyof Exercise, value: any) => {
+  const handleExerciseChange = (index: number, field: keyof Exercise, value: string | number) => {
     const updatedExercises = [...workout.exercises]
     updatedExercises[index] = {
       ...updatedExercises[index],
@@ -103,7 +103,7 @@ export default function NewWorkoutPage() {
               <Label htmlFor="category">Category</Label>
               <Select
                 value={workout.category}
-                onValueChange={(value) => setWorkout({ ...workout, category: value as any })}
+                onValueChange={(value) => setWorkout({ ...workout, category: value as string })}
               >
                 <SelectTrigger id="category">
                   <SelectValue placeholder="Select category" />
@@ -121,7 +121,7 @@ export default function NewWorkoutPage() {
               <Label htmlFor="difficulty">Difficulty</Label>
               <Select
                 value={workout.difficulty}
-                onValueChange={(value) => setWorkout({ ...workout, difficulty: value as any })}
+                onValueChange={(value) => setWorkout({ ...workout, difficulty: value as string })}
               >
                 <SelectTrigger id="difficulty">
                   <SelectValue placeholder="Select difficulty" />
